@@ -7,8 +7,8 @@ This short piece of Python3 code tests the performance of six integrators. The f
 - `openmm.MTSLangevinIntegrator`
 - `openmmtools.integrators.LangevinIntegrator` with the following splittings:
     - `V R O R V`
-    - `V1` + $$5\times$$`(V0 R O R V0)` + `V1`
-    - `V1` + $$2\times$$`(V0 R R V0)` + `(V0 R O R V0)` + $$2\times$$`(V0 R R V0)` + `V1`
+    - `V1` + $5\times$`(V0 R O R V0)` + `V1`
+    - `V1` + $2\times$`(V0 R R V0)` + `(V0 R O R V0)` + $2\times$`(V0 R R V0)` + `V1`
 
 The latter of these splittings is novel. It adds a velocity verlet step inside the usual R-RESPA style multiple timestepping method. In the example we use five cheap steps with force group `V0`, and one kick with force group `V1`.
 
